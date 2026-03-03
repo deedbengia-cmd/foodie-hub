@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Beverages - Premium Food App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="home.html">Home</a>
+  <a href="cart.html">Cart</a>
+</nav>
+
+<h1>🥤 Beverages</h1>
+
+<div class="container">
+
+  <!-- Coffee -->
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80" alt="Coffee">
+    <h3>Coffee</h3>
+    <p>Price: ₹50</p>
+    <input type="number" id="d1" value="1" min="1">
+    <button onclick="addBeverageToCart('Coffee','d1')">Add to Cart</button>
+  </div>
+
+  <!-- Tea -->
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1589308078050-1446d2e9c7a3?auto=format&fit=crop&w=800&q=80" alt="Tea">
+    <h3>Tea</h3>
+    <p>Price: ₹20</p>
+    <input type="number" id="d2" value="1" min="1">
+    <button onclick="addBeverageToCart('Tea','d2')">Add to Cart</button>
+  </div>
+
+  <!-- Mojito -->
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1598511725293-90d2c604b7a6?auto=format&fit=crop&w=800&q=80" alt="Mojito">
+    <h3>Mojito</h3>
+    <p>Price: ₹100</p>
+    <input type="number" id="d3" value="1" min="1">
+    <button onclick="addBeverageToCart('Mojito','d3')">Add to Cart</button>
+  </div>
+
+  <!-- Soft Drink -->
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80" alt="Soft Drink">
+    <h3>Soft Drink</h3>
+    <p>Price: ₹50</p>
+    <input type="number" id="d4" value="1" min="1">
+    <button onclick="addBeverageToCart('Soft Drink','d4')">Add to Cart</button>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
