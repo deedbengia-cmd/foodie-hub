@@ -159,4 +159,20 @@ function placeOrder(){
 
   // Redirect to home page
   window.location.href = "home.html";
+}function updateWhatsAppQR() {
+  let message = "Hello! I want to place this order:%0A";
+
+  cart.forEach(item => {
+    message += `${item.name} - ${item.quantity} x ₹${item.price} = ₹${item.quantity * item.price}%0A`;
+  });
+
+  let total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  message += `Total: ₹${total}`;
+
+  let waLink = `https://wa.me/9363734907?text=${message}`;
+
+  let qrImg = document.getElementById("whatsapp-qr");
+  if(qrImg){
+    qrImg.src = `https://chart.googleapis.com/chart?cht=qr&chl=${encodeURIComponent(waLink)}&chs=200x200`;
+  }
 }
