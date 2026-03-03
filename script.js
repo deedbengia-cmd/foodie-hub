@@ -175,4 +175,4 @@ function placeOrder(){
   if(qrImg){
     qrImg.src = `https://chart.googleapis.com/chart?cht=qr&chl=${encodeURIComponent(waLink)}&chs=200x200`;
   }
-}
+}updateWhatsAppQR();
