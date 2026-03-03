@@ -26,4 +26,64 @@ function addToCart(name, sizeId, qtyId){
 
   localStorage.setItem("cart", JSON.stringify(cart));
   alert(name + " added to cart!");
+}function displayCart(){
+  let cartContainer = document.getElementById("cart-container");
+  cartContainer.innerHTML = "";
+  let total = 0;
+
+  cart.forEach((item, index) => {
+    let itemTotal = item.price * item.quantity;
+    total += itemTotal;
+
+    cartContainer.innerHTML += `
+      <div class="card">
+        <h3>${item.name}</h3>
+        <p>Price: ₹${item.price}</p>
+        <p>Quantity: 
+          <input type="number" value="${item.quantity}" min="1" onchange="updateQty(${index}, this.value)">
+        </p>
+        <p>Subtotal: ₹${itemTotal}</p>
+        <button onclick="removeItem(${index})">Remove</button>
+      </div>
+    `;
+  });
+
+  document.getElementById("total").innerText = "Total: ₹" + total;
+}
+
+function updateQty(index, qty){
+  cart[index].quantity = parseInt(qty);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  displayCart();
+}
+
+function removeItem(index){
+  cart.splice(index,1);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  displayCart();
+}
+
+function placeOrder(){
+  if(cart.length === 0){
+    alert("Your cart is empty!");
+    return;
+  }
+
+  let message = "🛒 *New Order - Premium Food App*%0A%0A";
+  let total = 0;
+
+  cart.forEach(item=>{
+    let itemTotal = item.price * item.quantity;
+    total += itemTotal;
+    message += `🍽 ${item.name} x ${item.quantity} = ₹${itemTotal}%0A`;
+  });
+
+  message += `%0A💰 *Total: ₹${total}*%0A%0A`;
+  message += "✅ Please confirm this order.";
+
+  let phoneNumber = "919363734907"; // your WhatsApp number
+  window.location.href = `https://wa.me/${phoneNumber}?text=${message}`;
+
+  cart = [];
+  localStorage.setItem("cart", JSON.stringify(cart));
 }
