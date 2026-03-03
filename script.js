@@ -86,4 +86,24 @@ function placeOrder(){
 
   cart = [];
   localStorage.setItem("cart", JSON.stringify(cart));
+}function addBurgerToCart(name, qtyId){
+  let quantity = parseInt(document.getElementById(qtyId).value);
+  let priceList = {
+    "Classic Cheese Burger":50,
+    "Steakhouse Cheese Burger":80,
+    "Veggie Burger":40,
+    "BBQ Burger":100
+  };
+  let price = priceList[name];
+
+  // Check if item already in cart
+  let itemIndex = cart.findIndex(item => item.name === name && item.price === price);
+  if(itemIndex > -1){
+    cart[itemIndex].quantity += quantity;
+  } else {
+    cart.push({name:name, price:price, quantity:quantity});
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert(name + " added to cart!");
 }
