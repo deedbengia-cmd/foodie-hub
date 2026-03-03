@@ -144,4 +144,19 @@ function placeOrder(){
 
   localStorage.setItem("cart", JSON.stringify(cart));
   alert(name + " added to cart!");
+}function login(){
+  let username = document.getElementById("username").value.trim();
+  let phone = document.getElementById("phone").value.trim();
+
+  if(username === "" || phone === ""){
+    alert("Please enter both name/email and phone number");
+    return;
+  }
+
+  // Save user info
+  localStorage.setItem("userName", username);
+  localStorage.setItem("userPhone", phone);
+
+  // Redirect to home page
+  window.location.href = "home.html";
 }
