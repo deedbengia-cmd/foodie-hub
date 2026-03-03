@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Burger - Premium Food App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="home.html">Home</a>
+  <a href="cart.html">Cart</a>
+</nav>
+
+<h1>🍔 Burgers</h1>
+
+<div class="container">
+
+  <!-- Classic Cheese Burger -->
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80" alt="Classic Cheese Burger">
+    <h3>Classic Cheese Burger</h3>
+    <p>Price: ₹50</p>
+    <input type="number" id="b1" value="1" min="1">
+    <button onclick="addBurgerToCart('Classic Cheese Burger','b1')">Add to Cart</button>
+  </div>
+
+  <!-- Steakhouse Cheese Burger -->
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1617196031537-3f775e05d66f?auto=format&fit=crop&w=800&q=80" alt="Steakhouse Cheese Burger">
+    <h3>Steakhouse Cheese Burger</h3>
+    <p>Price: ₹80</p>
+    <input type="number" id="b2" value="1" min="1">
+    <button onclick="addBurgerToCart('Steakhouse Cheese Burger','b2')">Add to Cart</button>
+  </div>
+
+  <!-- Veggie Burger -->
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=800&q=80" alt="Veggie Burger">
+    <h3>Veggie Burger</h3>
+    <p>Price: ₹40</p>
+    <input type="number" id="b3" value="1" min="1">
+    <button onclick="addBurgerToCart('Veggie Burger','b3')">Add to Cart</button>
+  </div>
+
+  <!-- BBQ Burger -->
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1592906202155-d0e5bc844c7d?auto=format&fit=crop&w=800&q=80" alt="BBQ Burger">
+    <h3>BBQ Burger</h3>
+    <p>Price: ₹100</p>
+    <input type="number" id="b4" value="1" min="1">
+    <button onclick="addBurgerToCart('BBQ Burger','b4')">Add to Cart</button>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
