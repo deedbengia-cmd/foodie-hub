@@ -1,81 +1,108 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Pizza - Premium Food App</title>
-  <link rel="stylesheet" href="style.css">
+    <title>Pizza Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+
+        .menu-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .food-item {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .food-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .food-item h3 {
+            margin: 10px 0 5px;
+        }
+
+        .food-item p {
+            margin: 5px 0;
+            font-weight: bold;
+        }
+
+        button {
+            padding: 8px 15px;
+            border: none;
+            background: #ff4d4d;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #e60000;
+        }
+
+        .back-btn {
+            margin: 20px;
+            display: inline-block;
+        }
+    </style>
 </head>
+
 <body>
 
-<nav>
-  <a href="home.html">Home</a>
-  <a href="cart.html">Cart</a>
-</nav>
+<h1>🍕 Pizza Menu</h1>
 
-<h1>🍕 Pizzas</h1>
+<div class="menu-container">
 
-<div class="container">
+    <div class="food-item">
+        <img src="images/pizza/margarita.jpg" alt="Margarita Pizza">
+        <h3>Margarita Pizza</h3>
+        <p>₹199</p>
+        <button onclick="addToCart('Margarita Pizza',199)">Add to Cart</button>
+    </div>
 
-  <!-- Margarita Pizza -->
-  <div class="card">
-    <img src="images/margarita.jpg" alt="Margarita Pizza">
-    <h3>Margarita Pizza</h3>
-    <p>Small: ₹250 | Large: ₹450</p>
-    <label>Size: 
-      <select id="size1">
-        <option value="250">Small</option>
-        <option value="450">Large</option>
-      </select>
-    </label>
-    <input type="number" id="qty1" value="1" min="1">
-    <button onclick="addToCart('Margarita Pizza', 'size1', 'qty1')">Add to Cart</button>
-  </div>
+    <div class="food-item">
+        <img src="images/pizza/buffalo.jpg" alt="Buffalo Pizza">
+        <h3>Buffalo Pizza</h3>
+        <p>₹249</p>
+        <button onclick="addToCart('Buffalo Pizza',249)">Add to Cart</button>
+    </div>
 
-  <!-- Buffalo Pizza -->
-  <div class="card">
-    <img src="images/buffalo.jpg" alt="Buffalo Pizza">
-    <h3>Buffalo Pizza</h3>
-    <p>Small: ₹300 | Large: ₹550</p>
-    <label>Size: 
-      <select id="size2">
-        <option value="300">Small</option>
-        <option value="550">Large</option>
-      </select>
-    </label>
-    <input type="number" id="qty2" value="1" min="1">
-    <button onclick="addToCart('Buffalo Pizza', 'size2', 'qty2')">Add to Cart</button>
-  </div>
+    <div class="food-item">
+        <img src="images/pizza/cheese.jpg" alt="Cheese Pizza">
+        <h3>Cheese Pizza</h3>
+        <p>₹179</p>
+        <button onclick="addToCart('Cheese Pizza',179)">Add to Cart</button>
+    </div>
 
-  <!-- Cheese Pizza -->
-  <div class="card">
-    <img src="images/cheese.jpg" alt="Cheese Pizza">
-    <h3>Cheese Pizza</h3>
-    <p>Small: ₹100 | Large: ₹180</p>
-    <label>Size: 
-      <select id="size3">
-        <option value="100">Small</option>
-        <option value="180">Large</option>
-      </select>
-    </label>
-    <input type="number" id="qty3" value="1" min="1">
-    <button onclick="addToCart('Cheese Pizza', 'size3', 'qty3')">Add to Cart</button>
-  </div>
-
-  <!-- Paneer Pizza -->
-  <div class="card">
-    <img src="images/paneer.jpg" alt="Paneer Pizza">
-    <h3>Paneer Pizza</h3>
-    <p>Small: ₹150 | Large: ₹280</p>
-    <label>Size: 
-      <select id="size4">
-        <option value="150">Small</option>
-        <option value="280">Large</option>
-      </select>
-    </label>
-    <input type="number" id="qty4" value="1" min="1">
-    <button onclick="addToCart('Paneer Pizza', 'size4', 'qty4')">Add to Cart</button>
-  </div>
+    <div class="food-item">
+        <img src="images/pizza/paneer.jpg" alt="Paneer Pizza">
+        <h3>Paneer Pizza</h3>
+        <p>₹229</p>
+        <button onclick="addToCart('Paneer Pizza',229)">Add to Cart</button>
+    </div>
 
 </div>
+
+<a href="index.html" class="back-btn">
+    <button>⬅ Back to Home</button>
+</a>
 
 <script src="script.js"></script>
 
