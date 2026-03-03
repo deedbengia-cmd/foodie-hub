@@ -1,58 +1,110 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Fast Food - Premium Food App</title>
-  <link rel="stylesheet" href="style.css">
+    <title>Fast Food Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 20px;
+        }
+
+        .menu-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .food-item {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .food-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .food-item h3 {
+            margin: 10px 0 5px;
+        }
+
+        .food-item p {
+            margin: 5px 0;
+            font-weight: bold;
+        }
+
+        button {
+            padding: 8px 15px;
+            border: none;
+            background: #ff4d4d;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #e60000;
+        }
+
+        .back-btn {
+            margin: 20px;
+            display: inline-block;
+        }
+    </style>
 </head>
+
 <body>
 
-<nav>
-  <a href="home.html">Home</a>
-  <a href="cart.html">Cart</a>
-</nav>
+<h1>🍜 Fast Food Menu</h1>
 
-<h1>🍜 Fast Food</h1>
+<div class="menu-container">
 
-<div class="container">
+    <div class="food-item">
+        <img src="images/fastfood/chow.jpg" alt="Chow Noodles">
+        <h3>Chow Noodles</h3>
+        <p>₹120</p>
+        <button onclick="addToCart('Chow Noodles',120)">Add to Cart</button>
+    </div>
 
-  <!-- Chow Noodles -->
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1604908177522-4e4a0fa6d863?auto=format&fit=crop&w=800&q=80" alt="Chow Noodles">
-    <h3>Chow Noodles</h3>
-    <p>Price: ₹100</p>
-    <input type="number" id="f1" value="1" min="1">
-    <button onclick="addFastFoodToCart('Chow Noodles','f1')">Add to Cart</button>
-  </div>
+    <div class="food-item">
+        <img src="images/fastfood/momos.jpg" alt="Momos">
+        <h3>Momos</h3>
+        <p>₹100</p>
+        <button onclick="addToCart('Momos',100)">Add to Cart</button>
+    </div>
 
-  <!-- Momos -->
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1617196031987-1f7fce1aab0b?auto=format&fit=crop&w=800&q=80" alt="Momos">
-    <h3>Momos</h3>
-    <p>Price: ₹100</p>
-    <input type="number" id="f2" value="1" min="1">
-    <button onclick="addFastFoodToCart('Momos','f2')">Add to Cart</button>
-  </div>
+    <div class="food-item">
+        <img src="images/fastfood/thukpa.jpg" alt="Thukpa">
+        <h3>Thukpa</h3>
+        <p>₹150</p>
+        <button onclick="addToCart('Thukpa',150)">Add to Cart</button>
+    </div>
 
-  <!-- Thukpa -->
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1601050693810-12f9a6a1fa88?auto=format&fit=crop&w=800&q=80" alt="Thukpa">
-    <h3>Thukpa</h3>
-    <p>Price: ₹100</p>
-    <input type="number" id="f3" value="1" min="1">
-    <button onclick="addFastFoodToCart('Thukpa','f3')">Add to Cart</button>
-  </div>
-
-  <!-- Fried Rice -->
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80" alt="Fried Rice">
-    <h3>Fried Rice</h3>
-    <p>Price: ₹100</p>
-    <input type="number" id="f4" value="1" min="1">
-    <button onclick="addFastFoodToCart('Fried Rice','f4')">Add to Cart</button>
-  </div>
+    <div class="food-item">
+        <img src="images/fastfood/friedrice.jpg" alt="Fried Rice">
+        <h3>Fried Rice</h3>
+        <p>₹130</p>
+        <button onclick="addToCart('Fried Rice',130)">Add to Cart</button>
+    </div>
 
 </div>
 
+<a href="index.html" class="back-btn">
+    <button>⬅ Back to Home</button>
+</a>
+
 <script src="script.js"></script>
+
 </body>
 </html>
