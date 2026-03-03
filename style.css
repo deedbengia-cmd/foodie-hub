@@ -245,4 +245,49 @@ button:hover {
   font-size: 14px;
   color: lightgray;
   margin-bottom: 20px;
+}function generateOrderID() {
+  return "FODI" + Math.floor(10000 + Math.random() * 90000);
+}
+
+function confirmOrder() {
+
+  let name = document.getElementById("custName").value.trim();
+  let phone = document.getElementById("custPhone").value.trim();
+  let address = document.getElementById("custAddress").value.trim();
+  let landmark = document.getElementById("landmark").value.trim();
+
+  if (!name || !phone || !address) {
+    alert("Please fill all required delivery details.");
+    return;
+  }
+
+  if (cart.length === 0) {
+    alert("Your cart is empty.");
+    return;
+  }
+
+  let orderID = generateOrderID();
+
+  let message = `Order ID: ${orderID}%0A`;
+  message += `Name: ${name}%0A`;
+  message += `Phone: ${phone}%0A`;
+  message += `Address: ${address}%0A`;
+  if (landmark) message += `Landmark: ${landmark}%0A`;
+  message += `%0AOrder Details:%0A`;
+
+  let total = 0;
+
+  cart.forEach(item => {
+    message += `${item.name} - ${item.quantity} x ₹${item.price}%0A`;
+    total += item.quantity * item.price;
+  });
+
+  message += `%0ATotal: ₹${total}%0A`;
+  message += `%0APayment Done via UPI.`;
+
+  let whatsappURL = `https://wa.me/9363734907?text=${message}`;
+
+  window.open(whatsappURL, "_blank");
+
+  alert("Order sent! Please send payment screenshot on WhatsApp.");
 }
