@@ -1,20 +1,58 @@
-function addFastFoodToCart(name, qtyId){
-  let quantity = parseInt(document.getElementById(qtyId).value);
-  let priceList = {
-    "Chow Noodles":100,
-    "Momos":100,
-    "Thukpa":100,
-    "Fried Rice":100
-  };
-  let price = priceList[name];
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fast Food - Premium Food App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-  let itemIndex = cart.findIndex(item => item.name === name && item.price === price);
-  if(itemIndex > -1){
-    cart[itemIndex].quantity += quantity;
-  } else {
-    cart.push({name:name, price:price, quantity:quantity});
-  }
+<nav>
+  <a href="home.html">Home</a>
+  <a href="cart.html">Cart</a>
+</nav>
 
-  localStorage.setItem("cart", JSON.stringify(cart));
-  alert(name + " added to cart!");
-}
+<h1>🍜 Fast Food</h1>
+
+<div class="container">
+
+  <!-- Chow Noodles -->
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1604908177522-4e4a0fa6d863?auto=format&fit=crop&w=800&q=80" alt="Chow Noodles">
+    <h3>Chow Noodles</h3>
+    <p>Price: ₹100</p>
+    <input type="number" id="f1" value="1" min="1">
+    <button onclick="addFastFoodToCart('Chow Noodles','f1')">Add to Cart</button>
+  </div>
+
+  <!-- Momos -->
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1617196031987-1f7fce1aab0b?auto=format&fit=crop&w=800&q=80" alt="Momos">
+    <h3>Momos</h3>
+    <p>Price: ₹100</p>
+    <input type="number" id="f2" value="1" min="1">
+    <button onclick="addFastFoodToCart('Momos','f2')">Add to Cart</button>
+  </div>
+
+  <!-- Thukpa -->
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1601050693810-12f9a6a1fa88?auto=format&fit=crop&w=800&q=80" alt="Thukpa">
+    <h3>Thukpa</h3>
+    <p>Price: ₹100</p>
+    <input type="number" id="f3" value="1" min="1">
+    <button onclick="addFastFoodToCart('Thukpa','f3')">Add to Cart</button>
+  </div>
+
+  <!-- Fried Rice -->
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=800&q=80" alt="Fried Rice">
+    <h3>Fried Rice</h3>
+    <p>Price: ₹100</p>
+    <input type="number" id="f4" value="1" min="1">
+    <button onclick="addFastFoodToCart('Fried Rice','f4')">Add to Cart</button>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
