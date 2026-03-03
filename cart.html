@@ -4,24 +4,52 @@
   <title>Cart - Premium Food App</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <nav>
   <a href="home.html">Home</a>
 </nav>
 
-<h1>🛒 Your Cart</h1>
+<h1>Your Cart</h1>
 
 <div id="cart-container" class="container">
   <!-- Cart items will appear here -->
 </div>
 
 <h2 id="total">Total: ₹0</h2>
-<button onclick="placeOrder()">Place Order</button>
+
+<div style="text-align:center;">
+  <button onclick="placeOrder()">Place Order</button>
+</div>
+
+<!-- =======================
+     UPI PAYMENT SECTION
+======================= -->
+
+<div style="text-align:center; margin:50px 20px; padding:30px; background:#1a1a1a; border-radius:20px; box-shadow:0 0 25px rgba(255,215,0,0.4);">
+
+  <h2 style="color:gold;">Scan & Pay via UPI</h2>
+
+  <p style="color:lightgray; font-size:14px;">
+    Please pay the total amount shown above.
+  </p>
+
+  <img src="images/qr.png"
+       alt="UPI QR Code"
+       style="width:230px; height:230px; border-radius:20px; margin:20px 0; box-shadow:0 0 20px rgba(255,215,0,0.5);">
+
+  <p style="color:lightgray; font-size:14px;">
+    UPI ID: <strong>yourupi@bank</strong>
+  </p>
+
+  <p style="margin-top:15px; font-size:13px; color:#aaa;">
+    After payment, send the screenshot on WhatsApp to confirm your order.
+  </p>
+
+</div>
 
 <script src="script.js"></script>
-<div style="text-align:center; margin:30px;">
-  <h2>Scan to Order on WhatsApp</h2>
-  <img src="images/qr.png" alt="WhatsApp QR" style="width:200px; height:200px; border-radius:20px; box-shadow:0 0 20px rgba(255,215,0,0.5);">
-</div></body>
+
+</body>
 </html>
