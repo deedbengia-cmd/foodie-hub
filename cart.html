@@ -14,38 +14,31 @@
 <h1>Your Cart</h1>
 
 <div id="cart-container" class="container">
-  <!-- Cart items will appear here -->
+  <!-- Cart items appear here -->
 </div>
 
 <h2 id="total">Total: ₹0</h2>
 
-<div style="text-align:center;">
-  <button onclick="placeOrder()">Place Order</button>
-</div>
+<!-- ================= DELIVERY DETAILS ================= -->
 
-<!-- =======================
-     UPI PAYMENT SECTION
-======================= -->
+<div class="payment-box">
 
-<div style="text-align:center; margin:50px 20px; padding:30px; background:#1a1a1a; border-radius:20px; box-shadow:0 0 25px rgba(255,215,0,0.4);">
+  <h2>Delivery Details</h2>
 
-  <h2 style="color:gold;">Scan & Pay via UPI</h2>
+  <input type="text" id="custName" placeholder="Full Name">
+  <input type="text" id="custPhone" placeholder="Phone Number">
+  <textarea id="custAddress" placeholder="Full Delivery Address"></textarea>
+  <input type="text" id="landmark" placeholder="Landmark (Optional)">
 
-  <p style="color:lightgray; font-size:14px;">
-    Please pay the total amount shown above.
-  </p>
+  <h3 style="margin-top:30px;">Scan & Pay via UPI</h3>
 
   <img src="images/qr.png"
-       alt="UPI QR Code"
-       style="width:230px; height:230px; border-radius:20px; margin:20px 0; box-shadow:0 0 20px rgba(255,215,0,0.5);">
+       alt="UPI QR"
+       class="qr-image">
 
-  <p style="color:lightgray; font-size:14px;">
-    UPI ID: <strong>yourupi@bank</strong>
-  </p>
+  <p class="upi-id">UPI ID: UPI ID: <strong>deedbengia@okaxis</strong>
 
-  <p style="margin-top:15px; font-size:13px; color:#aaa;">
-    After payment, send the screenshot on WhatsApp to confirm your order.
-  </p>
+  <button onclick="confirmOrder()">I Have Paid</button>
 
 </div>
 
