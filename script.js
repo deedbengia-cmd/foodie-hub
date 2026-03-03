@@ -125,4 +125,23 @@ function placeOrder(){
 
   localStorage.setItem("cart", JSON.stringify(cart));
   alert(name + " added to cart!");
+}function addBeverageToCart(name, qtyId){
+  let quantity = parseInt(document.getElementById(qtyId).value);
+  let priceList = {
+    "Coffee":50,
+    "Tea":20,
+    "Mojito":100,
+    "Soft Drink":50
+  };
+  let price = priceList[name];
+
+  let itemIndex = cart.findIndex(item => item.name === name && item.price === price);
+  if(itemIndex > -1){
+    cart[itemIndex].quantity += quantity;
+  } else {
+    cart.push({name:name, price:price, quantity:quantity});
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert(name + " added to cart!");
 }
